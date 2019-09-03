@@ -1,0 +1,198 @@
+487
+
+don't need to close a EntityConnection in a using, do need to Open it
+
+EntityCommand .Prepare gathers information from server
+
+CommandType for an EntityCommand should be StoredProcedure when it is a function
+
+Access database uses Odbc or OleDb
+
+review select value in SQL
+
+Deleting .tt files prevents Visual studio from generating new classes when the model changes on a DB first approach
+
+.edmx file represent the model, whether model or database, so it means the EF is model first
+
+You can populate a Dataset with XML
+
+Database.Initialize(bool t) will create a db and override optionally based on parameter
+
+Web Deployment Agent in TFS needs to be on the server running IIS
+
+Review lazy loading
+
+put something in the GAC to have a standalone library redeploy without rebuilding the entire application
+
+an endpoint method that adds an item do the data source use PostName, to omit Post use [HttpPost] attribute
+
+PUT operation updates an existing record
+
+CreatedAtRoute method will return a serialized object as a response
+
+Azure Blobs are used to store large blocks of data, such as media files
+
+Azure Tables allow tabular information to be stored in a non-relational structure
+
+Twitter social login uses consumerKey and consumerSecret, Facebook uses appId and appSecret
+key and Id are 16 character string used as access token, secrets are 40 character strings used as token secret
+
+AntiForgery.GetTokens class can be used to add anti XSRF attacks by generating form tokens to validate requests against
+later AntiForgery.Validate can be used to validate those cookie and form tokens
+
+an Azure App Service Web Job scales up without needing to redeploy the application, an Azure Cloud Service Worker Role needs to redeploy to scale up
+
+HttpResponseMessage can be used to return a stream over Http, when returning some other object as Http be sure to set the resopnse status and content
+
+base Run method for a WebEntryRole does nothing, to prevent Start and Stop from executing multiple times override the Run method to implement blocking
+by default the role will stop whenever the Run method returns, implement blocking to stop this
+
+a Web API service automatically searches for any methods in a Controller class that begin with Get and that have a single parameter named url, doesn't need to be in the route for this scenario
+
+using CSPack.exe to deploy to Azure takes a .csdef file and will output a .cspkg file as the package to deploy
+
+VMs and a Virtual network are required to implement an Azure Load Balancer
+
+Traffic Manager profile is used to manage web site traffic accross multiple regions based on the user's location
+
+a cloud endpoint in Azure File Sync represents one file share in Azure, a sync group must contain one cloud endpoint
+
+WCF Data Services uses Open Data Protocol (OData) to expose data using REST
+
+CacheDependency expects an absolute path, HttpContext.Current.Server.MapPath can provide this
+
+HttpContext.Current.Cache.Insert if given a cache dependency will update the cache if a file changes
+
+ASP.NET Application object and cache objects are kept in memory and the app needs to be running
+
+Azure Blob storage stores large amounts of unstructure data and is accessible over HTTP and HTTPS
+
+Windows Azure Table storage is for structure non relational data
+
+the Start method of the WebApp class accepts as its type parameter the class that configures the Web API
+
+Start method accepts a parameter that represents the URL to listen for incoming requests on
+
+When declaring a SqlCommand on its own you must set the Connection property of the command so it uses the correct connection
+
+set the CommandType of the SqlCommand to StoredProcedure if appropriate
+
+binding redirect tag in Web.config file takes oldVersion and redirects to newVersion specified for the assemblyIdentity tag's referenced assembly
+these tags go in a dependentAssembly tag
+
+Add-BindingRedirect and Update-Package powershell commands work in a development environment not a production one
+
+the codeBase element of Web.config specifies where the CLR can find a specific assembly version, needs an href attribute
+
+for a TFS build server:
+- Rolling Builds as a trigger will not queue another build while one is in progress
+	rolling allows for a period of time to wait before starting another build
+	period of time prevents final build from being delayed by a number of queued builds
+- Continuous Integration queues a build for each check in
+- Scheduled build will build at a specified time of day
+- Gated Check-in will prevent check-ins that had failed builds
+
+- when using LINQ to Entities format is "from .. where .. select;" 
+	- use && to join logical pieces of the where clause
+	- use "from x in blah select x;" to select all
+	- use .Value to get the value of a nullable type
+
+- Serializable transaction isolation level will not allow updates or inserts to data that can affect a read query,
+	will guarantee same read results for two selects in a transaction
+
+- isolation levels:
+READ UNCOMMITTED
+Specifies that statements can read rows that have been modified by other transactions but not yet committed.
+READ COMMITTED
+Specifies that statements cannot read data that has been modified but not committed by other transactions. SQL server default.
+REPEATABLE READ
+Specifies that statements cannot read data that has been modified but not yet committed by other transactions and that no other
+transactions can modify data that has been read by the current transaction until the current transaction completes.
+Will read new data whereas SERIALIZABLE will not.
+SNAPSHOT
+Specifies that data read by any statement in a transaction will be the transactionally consistent version of the data that existed at the start of the transaction.
+SERIALIZABLE
+Statements cannot read data that has been modified but not yet committed by other transactions.
+No other transactions can modify data that has been read by the current transaction until the current transaction completes.
+Other transactions cannot insert new rows with key values that would fall in the range of keys read by any statements in the
+current transaction until the current transaction completes.
+
+- use Azure Blob Storage for large unstructured over HTTP or HTTPS, use this for an Access database
+
+- ASP.NET Application and Cache objects live in memory
+
+- HttpContext.Current.Cache.Insert can be used to create caches that track files, requires an absolute path to the file that 
+will be tracked. Server.MapPath can convert a virtual path to an absolute one.
+
+- protocol for an EventHubs namespace is sb, hostname is the company namespace, and in a connection string Endpoint and EntityPath are required
+
+- Database property of the DbContext class represents the underlying db, the Log property is Action<string> delegate that logs commands executed and the time it took
+
+- Azure Application Gateway is a load balancer solution that allows routing traffic based on URLs
+
+- in Azure API Management Gateway every API must be part of a product before you can invoke operations
+
+- Transform, Locator and Match attributes can be added to transform Web.configs when releasing to different environments
+
+- in Web.config > httpProtocols > customHeaders is where to add Access-Control-Allow-* names with values denoting which Origin, Methods and Headers to allow access to an API
+
+- for a SqlConnectionStringBuilder: DataSource is the SQL Server instance, InitialCatalog is the name of the database
+
+- If the .edmx file's build action is EntityDeploy then the .csdl, .ssdl and .msl files will be included as embedded resources and the EntityConnectionStringBuilder.Metadata property will need to be set
+
+- in ADO.NET DataReader provides read only access and will be faster than DataSet and DataAdapter (which allow modification)
+
+- Stored Procedures are faster than Dynamic SQL Expressions
+
+- Single throws an exception if there is more than 1
+
+- First will force execution just like ToList and ToArray
+
+- Take(n) will allow for deferred execution and will only take n not more than that
+
+- LINQ to XML easily parses an XML document in preparation for storage in a SQL Server database
+
+- when using a SqlCommand set the .Connection property to tell which SqlConnection to use, also set the .CommandType as needed
+
+- WCF Data Services uses Open Data (OData)
+
+- Web API uses REST semantics
+
+- Web API default actoin selector allows Post, Put, Get, Delete to determine behavior for methods with that in the start of the name and not require an attribute
+Ensure this is up to date with v2
+
+- for a .NET component consumed by ASP.NET register in GAC, for COM clients register in Windows Registry using Regasm.exe or Regsvr32.exe
+
+- Add-Migration and Update-Database PowerShell commands generate code needed to update the database on a code first approach
+
+- working directory in the project's properties should be the project root directory in order to find the database in a code first approach
+
+- by default Web API matches the action method name prefix with the HTTP verb
+
+- CORS must be enabled on both the web app client in the HttpConfiguration class and as an attribute on the Web API controller
+
+- in API Management: each gateway must have a unique URL and each API in a gateway must have a unique endpoint
+
+- revision of an API requires rev=# parameter
+
+- HTTP header value can be used for API version to control access without changing the URL
+
+- if a route prefix attribute is specified for a controller class the prefix is not needed on route attributes of the actions
+
+- regex can be applied to the {parameters} in route attributes
+
+- the Web Deployment Agent should be on the server running IIS in TFS
+
+- a .cmd or .bat file can be used to deploy an application after it is built in TFS 
+
+- swapping the Virtual IPs (VIPs) for the staging and production environments can reduce downtime after deploying to staging
+
+- Azure Compute Emulator hosts Windows Azure roles on a development computer
+
+- IDataServiceActionProvider interface should be implemented to advertised methods as service actions on entities in WCF
+
+- WebGet or WebInvoke attributes can be applied to service operations in WCF
+
+
+
+

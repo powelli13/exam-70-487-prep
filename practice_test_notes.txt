@@ -193,6 +193,18 @@ Ensure this is up to date with v2
 
 - WebGet or WebInvoke attributes can be applied to service operations in WCF
 
+- one TransactionScope can make statements against two different databases act as a single transaction
+
+- HttpContext.Current.Cache.Insert("name", object, new CacheDependency("filetomonitor.xml")); can be used to create an item in the ASP.NET cache that will be invalidated if the dependecy changes
+
+- the HttpCachePolicy class implements page output caching, not data caching
+
+- each server in Azure File Sync represents a server endpoint that will synchronize with the cloud endpoint, a cloud endpoint represents one file share in Azure
+
+- the Include method in EF allows you to eagerly load a related entity
+
+
+
 
 
 

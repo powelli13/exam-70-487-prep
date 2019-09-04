@@ -45,4 +45,4 @@ see here: https://docs.microsoft.com/en-us/azure/sql-database/sql-database-elast
 
 - CORS in an API see here: https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api
 
-
+- TODO lazy loading in EF see here: https://docs.microsoft.com/en-us/ef/ef6/querying/related-data

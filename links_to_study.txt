@@ -46,3 +46,9 @@ see here: https://docs.microsoft.com/en-us/azure/sql-database/sql-database-elast
 - CORS in an API see here: https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api
 
 - TODO lazy loading in EF see here: https://docs.microsoft.com/en-us/ef/ef6/querying/related-data
+
+- research bearer token in Oauth
+
+- read about Azure service fabric: https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview
+
+- read about swashbuckle: https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-2.2&tabs=visual-studio

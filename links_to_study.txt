@@ -52,3 +52,5 @@ see here: https://docs.microsoft.com/en-us/azure/sql-database/sql-database-elast
 - read about Azure service fabric: https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview
 
 - read about swashbuckle: https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-2.2&tabs=visual-studio
+
+- run through this quickstart tutorial: https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-dotnet-core-quickstart

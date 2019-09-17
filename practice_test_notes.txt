@@ -239,4 +239,10 @@ Ensure this is up to date with v2
 
 - {host}swagger/ui displays user friendly documentaiton of a web API.
 
+- IActionServiceProvider is a WCF thing to advertise a service that performs an action
 
+- MetadataType attribute allows a class to provide additional metadata for a class over which you have no control
+
+- Svcutil.exe only cares about service contracts, which is the assembly that contains the interface
+
+- 

@@ -8,8 +8,6 @@ CommandType for an EntityCommand should be StoredProcedure when it is a function
 
 Access database uses Odbc or OleDb
 
-review select value in SQL
-
 Deleting .tt files prevents Visual studio from generating new classes when the model changes on a DB first approach
 
 .edmx file represent the model, whether model or database, so it means the EF is model first
@@ -47,7 +45,8 @@ HttpResponseMessage can be used to return a stream over Http, when returning som
 base Run method for a WebEntryRole does nothing, to prevent Start and Stop from executing multiple times override the Run method to implement blocking
 by default the role will stop whenever the Run method returns, implement blocking to stop this
 
-a Web API service automatically searches for any methods in a Controller class that begin with Get and that have a single parameter named url, doesn't need to be in the route for this scenario
+a Web API service automatically searches for any methods in a Controller class that begin with Get and that have a single parameter named url, 
+doesn't need to be in the route for this scenario
 
 using CSPack.exe to deploy to Azure takes a .csdef file and will output a .cspkg file as the package to deploy
 
@@ -67,7 +66,7 @@ ASP.NET Application object and cache objects are kept in memory and the app need
 
 Azure Blob storage stores large amounts of unstructure data and is accessible over HTTP and HTTPS
 
-Windows Azure Table storage is for structure non relational data
+Windows Azure Table storage is for structured non relational data
 
 the Start method of the WebApp class accepts as its type parameter the class that configures the Web API
 
@@ -119,8 +118,6 @@ current transaction until the current transaction completes.
 
 - use Azure Blob Storage for large unstructured over HTTP or HTTPS, use this for an Access database
 
-- ASP.NET Application and Cache objects live in memory
-
 - HttpContext.Current.Cache.Insert can be used to create caches that track files, requires an absolute path to the file that 
 will be tracked. Server.MapPath can convert a virtual path to an absolute one.
 
@@ -134,11 +131,13 @@ will be tracked. Server.MapPath can convert a virtual path to an absolute one.
 
 - Transform, Locator and Match attributes can be added to transform Web.configs when releasing to different environments
 
-- in Web.config > httpProtocols > customHeaders is where to add Access-Control-Allow-* names with values denoting which Origin, Methods and Headers to allow access to an API
+- in Web.config > httpProtocols > customHeaders is where to add Access-Control-Allow-* names with values denoting which Origin, Methods 
+	and Headers to allow access to an API
 
 - for a SqlConnectionStringBuilder: DataSource is the SQL Server instance, InitialCatalog is the name of the database
 
-- If the .edmx file's build action is EntityDeploy then the .csdl, .ssdl and .msl files will be included as embedded resources and the EntityConnectionStringBuilder.Metadata property will need to be set
+- If the .edmx file's build action is EntityDeploy then the .csdl, .ssdl and .msl files will be included as embedded resources 
+	and the EntityConnectionStringBuilder.Metadata property will need to be set
 
 - in ADO.NET DataReader provides read only access and will be faster than DataSet and DataAdapter (which allow modification)
 
@@ -154,12 +153,10 @@ will be tracked. Server.MapPath can convert a virtual path to an absolute one.
 
 - when using a SqlCommand set the .Connection property to tell which SqlConnection to use, also set the .CommandType as needed
 
-- WCF Data Services uses Open Data (OData)
-
 - Web API uses REST semantics
 
-- Web API default actoin selector allows Post, Put, Get, Delete to determine behavior for methods with that in the start of the name and not require an attribute
-Ensure this is up to date with v2
+- Web API default action selector allows Post, Put, Get, Delete to determine behavior for methods with that as the start of the name and not require an attribute
+	* Ensure this is up to date with v2
 
 - for a .NET component consumed by ASP.NET register in GAC, for COM clients register in Windows Registry using Regasm.exe or Regsvr32.exe
 
@@ -245,4 +242,21 @@ Ensure this is up to date with v2
 
 - Svcutil.exe only cares about service contracts, which is the assembly that contains the interface
 
-- 
+- in EF the DbContext class has OnConfiguring method which can be used to determine whether to use SQL Server or SQLLite depending on the context
+
+- Web Deploy Package is a tool that creates a package to install a WCF service on a server. contains a batch file and zip with all files needed to deploy
+
+- InverseProperty instructs EF to match properties between two entities so that duplicated foreign keys are not created.
+
+- Traffic Manager Profile distributes web site traffic across multiple regions, users will connect to the instance of the site nearest them
+
+- Application_Error is an ASP.NET WebForms way to handle unhandled exceptions in the App, not used for Web API.
+
+- Need to use select value {name} in Entity SQL in order to select a collection of Entity objects
+
+- Must use EntityCommand.CommandType = CommandType.StoredProcedure in order to use a stored procedure name as the command text
+
+- *.servicebus.windows.net/{service name} is endpoint for a Service Bus, *.azurewebsites.net is for Azure web app, API app or function app, *.azure-api.net is for API Management gateway
+	where * is the namespace
+	
+- Scaffold-DbContext powershell command allows you to reverse engineer a database and generate DbContext derived class and entity classes. first parameter is the connection string, second parameter is the db provider.

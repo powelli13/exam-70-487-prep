@@ -1,5 +1,10 @@
 ConsoleAppCodeFirst/ConsoleAppCodeFirst/[Bb]in/
 ConsoleAppCodeFirst/ConsoleAppCodeFirst/[Oo]bj/
 
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
 *.obj
 *.pdb

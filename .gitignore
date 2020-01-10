@@ -1,0 +1,5 @@
+ConsoleAppCodeFirst/ConsoleAppCodeFirst/[Bb]in/
+ConsoleAppCodeFirst/ConsoleAppCodeFirst/[Oo]bj/
+
+*.obj
+*.pdb

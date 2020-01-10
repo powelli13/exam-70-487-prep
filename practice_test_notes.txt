@@ -192,7 +192,8 @@ will be tracked. Server.MapPath can convert a virtual path to an absolute one.
 
 - one TransactionScope can make statements against two different databases act as a single transaction
 
-- HttpContext.Current.Cache.Insert("name", object, new CacheDependency("filetomonitor.xml")); can be used to create an item in the ASP.NET cache that will be invalidated if the dependecy changes
+- HttpContext.Current.Cache.Insert("name", object, new CacheDependency("filetomonitor.xml")); can be used to create an item in the ASP.NET cache 
+	that will be invalidated if the dependecy changes
 
 - the HttpCachePolicy class implements page output caching, not data caching
 
@@ -224,7 +225,8 @@ will be tracked. Server.MapPath can convert a virtual path to an absolute one.
 
 - Xsd is a tool that generates XML schema and C# classes from XML and XSD files
 
-- to implement client certs and token authentication create a custom HTTP module and handle the Authenticate Request event of the HttpApplication class, this event happens before the ProcessRequest event
+- to implement client certs and token authentication create a custom HTTP module and handle the Authenticate Request event of the HttpApplication class, 
+	this event happens before the ProcessRequest event
 
 - in Web.config the transport clientCredentialType and serviceAuthenticationManager authenticationSchemes can be set to single values not comma delimited lists
 
@@ -256,7 +258,12 @@ will be tracked. Server.MapPath can convert a virtual path to an absolute one.
 
 - Must use EntityCommand.CommandType = CommandType.StoredProcedure in order to use a stored procedure name as the command text
 
-- *.servicebus.windows.net/{service name} is endpoint for a Service Bus, *.azurewebsites.net is for Azure web app, API app or function app, *.azure-api.net is for API Management gateway
+- *.servicebus.windows.net/{service name} is endpoint for a Service Bus, *.azurewebsites.net is for Azure web app, API app or function app, 
+	*.azure-api.net is for API Management gateway
 	where * is the namespace
 	
-- Scaffold-DbContext powershell command allows you to reverse engineer a database and generate DbContext derived class and entity classes. first parameter is the connection string, second parameter is the db provider.
+- Scaffold-DbContext powershell command allows you to reverse engineer a database and generate DbContext derived class and entity classes. 
+	first parameter is the connection string, second parameter is the db provider.
+
+- For requests to an Azure file share made with the File REST protocol, files are addressable using the following URL format:
+	https://<storage account>.file.core.windows.net/<share>/<directory>/<file>
